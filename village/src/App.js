@@ -32,22 +32,23 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className='nav-links'>
-          <NavLink to='/smurf-form'>Add A Smurf</NavLink>
-          <NavLink to='/smurf-list'>Smurfs</NavLink>
+        <div className='nav-bar'>
+          <NavLink className='nav-link' to='/smurf-form'>Add A Smurf</NavLink>
+          <img className='nav-img' src={ require('./components/images/gargamel.png')} alt='gargamel chasing a smurf'/>
+          <NavLink className='nav-link' to='/'>Smurfs</NavLink>
         </div>
-        {/* <Smurfs smurfs={this.state.smurfs} /> */}
+        {/* add routes first, declare the route here */}
         <Route
           path='/smurf-form'
           component={SmurfForm}>
         </Route>
         <Route
-          path='/smurf-list'
+          exact path='/'
           render={props => (
             <Smurfs 
               {...props}
               smurfs={this.state.smurfs}
-              />
+            />
           )}>
         </Route>
         

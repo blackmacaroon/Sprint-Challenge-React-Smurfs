@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import './form.css';
 
 class SmurfForm extends Component {
   constructor(props) {
@@ -22,7 +23,7 @@ class SmurfForm extends Component {
       })
       .then(res => {
         this.setState({ smurfs: res.data });
-        this.props.history.push('/smurf-list')
+        this.props.history.push('/')
         console.log('add smurf res', res)
       })
       .catch(err => console.log(err));
