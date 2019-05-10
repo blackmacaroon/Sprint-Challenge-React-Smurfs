@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  font-size: 62.5%;
 }
 
 .nav-bar {
@@ -9,6 +8,7 @@
   flex-direction: row-reverse;
   justify-content: space-around;
   background: rgb(69, 132, 250);
+  box-shadow: 5px 10px 8px rgb(54, 54, 54);
   
 }
 
@@ -21,10 +21,11 @@
   background: white;
   color: rgb(69, 132, 250);
   text-decoration: none;
+  box-shadow: 5px 10px 8px rgb(54, 54, 54);
 }
 
 .nav-link:hover {
-  color: #6ebcf6;
+  color: rgb(110,188,246);
 }
 
 .nav-img {
