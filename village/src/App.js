@@ -36,6 +36,7 @@ class App extends Component {
           <NavLink className='nav-link' to='/smurf-form'>Add A Smurf</NavLink>
           <img className='nav-img' src={ require('./components/images/gargamel.png')} alt='gargamel chasing a smurf'/>
           <NavLink className='nav-link' to='/'>Smurfs</NavLink>
+
         </div>
         {/* add routes first, declare the route here */}
         <Route
@@ -51,7 +52,7 @@ class App extends Component {
             />
           )}>
         </Route>
-        
+        <img className='foot-img' src={ require('./components/images/papasmurf.png')} alt='papa smurf smiling' />
       </div>
     );
   }
