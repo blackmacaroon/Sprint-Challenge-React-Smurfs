@@ -19,9 +19,12 @@ class App extends Component {
     .then(res => {
       // console.log('response data', res.data);
       this.setState({ smurfs: res.data })
+      console.log('mounting', this.state)
     })
     .catch(err => console.log(err));
   }
+
+  
   // add any needed code to ensure that the smurfs collection exists on state and it has data coming from the server
   // Notice what your map function is looping over and returning inside of Smurfs.
   // You'll need to make sure you have the right properties on state and pass them down to props.
