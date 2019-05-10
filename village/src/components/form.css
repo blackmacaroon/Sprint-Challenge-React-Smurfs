@@ -26,6 +26,13 @@ input {
       box-shadow: 2px 5px 6px rgb(54, 54, 54);
       
 }
+.baseline-bold {
+      margin: 0 auto;
+      width: 40%;
+      border: 3px solid rgb(203, 86, 66);
+      box-shadow: 3px 7px 6px rgb(54, 54, 54);
+      
+}
 
 .add-butt {
       border: 1px solid black;
