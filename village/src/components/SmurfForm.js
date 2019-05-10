@@ -22,7 +22,6 @@ class SmurfForm extends Component {
       })
       .then(res => {
         this.setState({ smurfs: res.data });
-        this.props.history.push('/smurf-list');
         console.log('add smurf res', res)
       })
       .catch(err => console.log(err));
