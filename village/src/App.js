@@ -23,7 +23,25 @@ class App extends Component {
       console.log('mounting', this.state)
     })
     .catch(err => console.log(err));
-  }
+  };
+
+  newSmurfHandler = smurf => {
+    axios
+      .post('http://localhost:3333/smurfs', smurf)
+      .then(res => {
+        this.setState({ smurfs: res.data })
+      })
+      .catch(err => console.log("mothersmurfer", err))
+  };
+
+  deleteSmurfHandler = id => {
+    axios
+      .delete(`http://localhost:3333/smurfs/${id}`)
+      .then(res => {
+        this.setState({ smurfs: res.data })
+      })
+      .catch(err => console.log("smurf that", err))
+  };
 
   
   // add any needed code to ensure that the smurfs collection exists on state and it has data coming from the server
@@ -41,7 +59,11 @@ class App extends Component {
         {/* add routes first, declare the route here */}
         <Route
           path='/smurf-form'
-          component={SmurfForm}>
+          render={props => (
+            <SmurfForm
+            {...props}
+            newSmurf={this.newSmurfHandler}/>
+          )}>
         </Route>
         <Route
           exact path='/'
@@ -49,6 +71,7 @@ class App extends Component {
             <Smurfs 
               {...props}
               smurfs={this.state.smurfs}
+              onDelete={this.deleteSmurfHandler}
             />
           )}>
         </Route>
